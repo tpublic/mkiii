@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    traefik.enable: "true"
+    kubernetes.io/ingress.class: traefik
+  labels:
+    app: frontend
+    release: frontend
+    name: frontend
+    io.kompose.service: frontend
+  name: frontend
+  namespace: microkube
+spec:
+  rules:
+  - host: www.staging.feingkai.com
+    http:
+      paths:
+      - backend:
+          serviceName: frontend
+          servicePort: 5000
+        path: /
+  tls:
+  - hosts:
+    - www.staging.feingkai.com
+    secretName: www-staging-secret

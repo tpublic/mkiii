@@ -1,0 +1,26 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "3600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "3600"
+    nginx.org/websocket-services: gateway
+  labels:
+    app: gateway
+    release: gateway
+  name: gateway
+  namespace: microkube
+spec:
+  rules:
+  - host: gateway.feingkai.com
+    http:
+      paths:
+      - backend:
+          serviceName: gateway
+          servicePort: 8099
+        path: /
+  tls:
+  - hosts:
+    - gateway.feingkai.com
+    secretName: gateway-secret
