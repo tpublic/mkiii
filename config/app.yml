@@ -1,7 +1,7 @@
 app:
   name: "FeingKube"
-  domain: "staging.feingkai.com"
-  subdomain: "www"
+  domain: "domain_REPLACE"
+  subdomain: "subdomain_REPLACE"
 ssl:
   enabled: true
   email: "support@example.com"
@@ -47,6 +47,6 @@ arke:
       - driver: binance
         market: 'BTCUSDT'
         host: "api.binance.com"
-        name: binance.com@infosoc.net
+        name: binance.com@info.soc
         key: arke-source-binance-key-changeme
         secret: arke-source-binance-secret-changeme
