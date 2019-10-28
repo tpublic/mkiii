@@ -472,6 +472,501 @@
                 "name": "cluster_ranger_443",
                 "type": "STRICT_DNS"
             }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_barong_8001_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "barong.mkiii",
+                                                "port_value": 8001,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_barong_8001_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_applogic_3000_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "applogic.mkiii",
+                                                "port_value": 3000,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_applogic_3000_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_peatio-trading-ui_3000_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "peatio-trading-ui.mkiii",
+                                                "port_value": 3000,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_peatio-trading-ui_3000_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_fx-wallets_80_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "fx-wallets.mkiii",
+                                                "port_value": 80,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_fx-wallets_80_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_fx-account_80_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "fx-account.mkiii",
+                                                "port_value": 80,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_fx-account_80_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_fx-security_80_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "fx-security.mkiii",
+                                                "port_value": 80,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_fx-security_80_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_fx-dashboard_80_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "fx-dashboard.mkiii",
+                                                "port_value": 80,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_fx-dashboard_80_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_fx-markets_80_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "fx-markets.mkiii",
+                                                "port_value": 80,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_fx-markets_80_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_peatio-trading-ui-1-9-stable_3000_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "peatio-trading-ui-1-9-stable.mkiii",
+                                                "port_value": 3000,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_peatio-trading-ui-1-9-stable_3000_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_extauth_barong_8001_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "barong.mkiii",
+                                                "port_value": 8001,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_extauth_barong_8001_mkiii",
+                "type": "STRICT_DNS"
+            },
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_peatio_8000_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "peatio.mkiii",
+                                                "port_value": 8000,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_peatio_8000_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_peatio_1_9_24_8000_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "peatio-1-9-24.mkiii",
+                                                "port_value": 8000,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_peatio_1_9_24_8000_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_peatio_2_2_30_8000_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "peatio-2-2-30.mkiii",
+                                                "port_value": 8000,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_peatio_2_2_30_8000_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_peatio_2_3_43_8000_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "peatio-2-3-43.mkiii",
+                                                "port_value": 8000,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_peatio_2_3_43_8000_mkiii",
+                "type": "STRICT_DNS"
+            },
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_ranger_443_mkiii",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "ranger.mkiii",
+                                                "port_value": 443,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_ranger_443_mkiii",
+                "type": "STRICT_DNS"
+            }
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         ],
         "listeners": [
             {
@@ -545,7 +1040,7 @@
                                         "virtual_hosts": [
                                             {
                                                 "domains": [
-                                                    "*"
+                                                    "www.<%= @config['app']['domain'] %>"
                                                 ],
                                                 "name": "backend",
                                                 "routes": [
@@ -554,7 +1049,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -592,7 +1087,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -630,7 +1125,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -663,7 +1158,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -696,7 +1191,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -731,7 +1226,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -767,7 +1262,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -800,7 +1295,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -835,7 +1330,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -872,7 +1367,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -910,7 +1405,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -948,7 +1443,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -986,7 +1481,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -1023,7 +1518,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -1056,7 +1551,7 @@
                                                             "case_sensitive": true,
                                                             "headers": [
                                                                 {
-                                                                    "exact_match": "<%= @config['app']['subdomain'] %>.<%= @config['app']['domain'] %>",
+                                                                    "exact_match": "www.<%= @config['app']['domain'] %>",
                                                                     "name": ":authority"
                                                                 }
                                                             ],
@@ -1102,8 +1597,658 @@
                         "use_proxy_proto": false
                     }
                 ],
-                "name": "ir.listener"
+                "name": "mk2.listener"
+            },
+
+
+
+
+
+
+
+
+
+
+            {
+                "address": {
+                    "socket_address": {
+                        "address": "0.0.0.0",
+                        "port_value": 81,
+                        "protocol": "TCP"
+                    }
+                },
+                "filter_chains": [
+                    {
+                        "filters": [
+                            {
+                                "config": {
+                                    "access_log": [
+                                        {
+                                            "config": {
+                                                "format": "ACCESS [%START_TIME%] \"%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%\" %RESPONSE_CODE% %RESPONSE_FLAGS% %BYTES_RECEIVED% %BYTES_SENT% %DURATION% %RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)% \"%REQ(X-FORWARDED-FOR)%\" \"%REQ(USER-AGENT)%\" \"%REQ(X-REQUEST-ID)%\" \"%REQ(:AUTHORITY)%\" \"%UPSTREAM_HOST%\"\n",
+                                                "path": "/dev/fd/1"
+                                            },
+                                            "name": "envoy.file_access_log"
+                                        }
+                                    ],
+                                    "http_filters": [
+                                        {
+                                            "config": {
+                                                "max_request_bytes": 100000000,
+                                                "max_request_time": "5.000s"
+                                            },
+                                            "name": "envoy.buffer"
+                                        },
+                                        {
+                                            "config": {
+                                                "http_service": {
+                                                    "allowed_authorization_headers": [
+                                                        "location",
+                                                        "set-cookie",
+                                                        "authorization",
+                                                        "proxy-authenticate",
+                                                        "www-authenticate"
+                                                    ],
+                                                    "allowed_request_headers": [
+                                                        "user-agent",
+                                                        "cookie",
+                                                        "x-forwarded-proto",
+                                                        "authorization",
+                                                        "proxy-authorization",
+                                                        "x-forwarded-host",
+                                                        "x-forwarded-for",
+                                                        "from"
+                                                    ],
+                                                    "path_prefix": "/api/v2/auth",
+                                                    "server_uri": {
+                                                        "cluster": "cluster_extauth_barong_8001_mkiii",
+                                                        "timeout": "5.000s",
+                                                        "uri": "http://barong.mkiii:8001"
+                                                    }
+                                                }
+                                            },
+                                            "name": "envoy.ext_authz"
+                                        },
+                                        {
+                                            "name": "envoy.cors"
+                                        },
+                                        {
+                                            "name": "envoy.router"
+                                        }
+                                    ],
+                                    "route_config": {
+                                        "virtual_hosts": [
+                                            {
+                                                "domains": [
+                                                    "iii.<%= @config['app']['domain'] %>"
+                                                ],
+                                                "name": "backend",
+                                                "routes": [
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/api/v2/ranger/public"
+                                                        },
+                                                        "per_filter_config": {
+                                                            "envoy.buffer": {
+                                                                "disabled": true
+                                                            }
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_ranger_443_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/api/v2/ranger/private"
+                                                        },
+                                                        "per_filter_config": {
+                                                            "envoy.buffer": {
+                                                                "disabled": true
+                                                            }
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_ranger_443_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/api/v2/peatio/account-disabled"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/api/v2/account",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_peatio_1_9_24_8000_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/api/v2/peatio"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/api/v2/",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_peatio_8000_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/api/v2/barong"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/api/v2/",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_barong_8001_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/api/v2/applogic"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/api/v2/",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_applogic_3000_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/assets"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/assets",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_peatio_8000_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/trading-ui-assets/"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/trading-ui-assets/",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_peatio-trading-ui-1-9-stable_3000_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/wallets"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/wallets",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_fx-wallets_80_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/account"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/account",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_fx-account_80_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+
+
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/account"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/account",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_fx-security_80_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+
+
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/dashboard"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/dashboard",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_fx-dashboard_80_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+
+
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/markets"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/markets",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_fx-markets_80_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/trading/"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/trading/",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_peatio-trading-ui-1-9-stable_3000_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "iii.<%= @config['app']['domain'] %>",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/admin"
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "prefix_rewrite": "/admin",
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_peatio_8000_mkiii",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "stat_prefix": "ingress_http",
+                                    "upgrade_configs": [
+                                        {
+                                            "upgrade_type": "websocket"
+                                        }
+                                    ],
+                                    "use_remote_address": true
+                                },
+                                "name": "envoy.http_connection_manager"
+                            }
+                        ],
+                        "use_proxy_proto": false
+                    }
+                ],
+                "name": "mkiii.listener"
             }
+
+
+
+
+
+
+
+
+
+
         ]
     }
 }
