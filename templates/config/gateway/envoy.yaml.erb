@@ -249,10 +249,10 @@ static_resources:
                 server_uri:
                   cluster: barong
                   timeout: 1.000s
-                  uri: http://mkiii.barong:8001
+                  uri: http://barong.mkiii:8001
           - name: envoy.router
             config: {}
-        clusters:
+  clusters:
   - name: barong
     connect_timeout: 0.25s
     type: strict_dns
