@@ -8,6 +8,10 @@ static_resources:
     - filters:
       - name: envoy.http_connection_manager
         config:
+          access_log:
+          - name: envoy.file_access_log
+            config:
+              path: "/var/log/www.access_log"
           codec_type: auto
           stat_prefix: ingress_http
           route_config:
@@ -134,6 +138,10 @@ static_resources:
     - filters:
       - name: envoy.http_connection_manager
         config:
+          access_log:
+          - name: envoy.file_access_log
+            config:
+              path: "/var/log/iii.access_log"
           codec_type: auto
           stat_prefix: ingress_http
           route_config:
@@ -143,69 +151,69 @@ static_resources:
               domains:
               - "iii.staging.feingkai.com"
               cors:
-                allow_origin: ["*", "https://iii.staging.feingkai.com", "http://iii.staging.feingkai.com", "iii.staging.feingkai.com", "*.feingkai.com"]
+                allow_origin: ["https://iii.staging.feingkai.com", "http://iii.staging.feingkai.com", "iii.staging.feingkai.com", "*.feingkai.com"]
                 allow_methods: GET, POST, PUT, HEAD, OPTIONS, DELETE
                 allow_headers: Authorization,Content-Type,correlationid
               routes:
               - match:
                   prefix: "/api/v2/barong"
                 route:
-                  cluster: barong
+                  cluster: barong_mkiii
                   prefix_rewrite: "/api/v2/"
 
               - match:
                   prefix: "/api/v2/applogic"
                 route:
-                  cluster: applogic
+                  cluster: applogic_mkiii
                   prefix_rewrite: "/api/v2/"
 
 
               - match:
                   prefix: "/api/v2/peatio/account-disabled"
                 route:
-                  cluster: peatio-1-9-24
+                  cluster: peatio-1-9-24_mkiii
                   prefix_rewrite: "/api/v2/account"
               - match:
                   prefix: "/api/v2/peatio"
                 route:
-                  cluster: peatio-2-3-43
+                  cluster: peatio-2-3-43_mkiii
                   prefix_rewrite: "/api/v2/"
               - match:
                   prefix: "/admin"
                 route:
-                  cluster: peatio-2-3-43
+                  cluster: peatio-2-3-43_mkiii
               - match:
                   prefix: "/assets/"
                 route:
-                  cluster: peatio-2-3-43
+                  cluster: peatio-2-3-43_mkiii
               - match:
                   prefix: "/trading-ui-assets/"
                 route:
-                  cluster: peatio-trading-ui-1-9-stable
+                  cluster: peatio-trading-ui-1-9-stable_mkiii
               - match:
                   prefix: "/trading/"
                 route:
-                  cluster: peatio-trading-ui-1-9-stable
+                  cluster: peatio-trading-ui-1-9-stable_mkiii
               - match:
                   prefix: "/wallets"
                 route:
-                  cluster: fx-wallets
+                  cluster: fx-wallets_mkiii
               - match:
                   prefix: "/account"
                 route:
-                  cluster: fx-account
+                  cluster: fx-account_mkiii
               - match:
                   prefix: "/markets"
                 route:
-                  cluster: fx-markets
+                  cluster: fx-markets_mkiii
               - match:
                   prefix: "/dashboard"
                 route:
-                  cluster: fx-dashboard
+                  cluster: fx-dashboard_mkiii
               - match:
                   prefix: "/security"
                 route:
-                  cluster: fx-security
+                  cluster: fx-security_mkiii
 
 
 
@@ -214,14 +222,14 @@ static_resources:
               - match:
                   prefix: "/api/v2/ranger/public"
                 route:
-                  cluster: ranger
+                  cluster: ranger_mkiii
                   prefix_rewrite: "/"
                   upgrade_configs:
                     upgrade_type: "websocket"
               - match:
                   prefix: "/api/v2/ranger/private"
                 route:
-                  cluster: ranger
+                  cluster: ranger_mkiii
                   prefix_rewrite: "/"
                   upgrade_configs:
                     upgrade_type: "websocket"
@@ -247,7 +255,7 @@ static_resources:
                 - from
                 path_prefix: "/api/v2/auth"
                 server_uri:
-                  cluster: barong
+                  cluster: barong_mkiii
                   timeout: 1.000s
                   uri: http://barong.mkiii:8001
           - name: envoy.router
@@ -379,10 +387,6 @@ static_resources:
         address: fx-security
         port_value: 80
     
-    
-                                        
-
-
   - name: ranger
     connect_timeout: 0.25s
     type: strict_dns
@@ -391,6 +395,154 @@ static_resources:
     - socket_address:
         address: ranger
         port_value: 443
+
+
+
+  - name: barong_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: barong.mkiii
+        port_value: 8001
+
+
+  - name: applogic_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: applogic.mkiii
+        port_value: 3000
+    
+    
+    
+
+  - name: peatio-trading-ui_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: peatio-trading-ui.mkiii
+        port_value: 3000
+
+  - name: peatio-trading-ui-1-9-stable_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: peatio-trading-ui-1-9-stable.mkiii
+        port_value: 3000
+
+  - name: peatio_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: peatio.mkiii
+        port_value: 8000
+  - name: peatio-1-9-24_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: peatio-1-9-24.mkiii
+        port_value: 8000
+
+  - name: peatio-2-2-30_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: peatio-2-2-30.mkiii
+        port_value: 8000
+
+
+  - name: peatio-2-3-43_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: peatio-2-3-43.mkiii
+        port_value: 8000
+
+
+        
+
+
+  - name: fx-wallets_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: fx-wallets.mkiii
+        port_value: 80
+
+
+  - name: fx-account_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: fx-account.mkiii
+        port_value: 80
+
+
+  - name: fx-dashboard_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: fx-dashboard.mkiii
+        port_value: 80
+
+
+  - name: fx-markets_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: fx-markets.mkiii
+        port_value: 80
+
+  - name: fx-security_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: fx-security.mkiii
+        port_value: 80
+    
+    
+                                        
+
+
+  - name: ranger_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: ranger.mkiii
+        port_value: 443
+
+
+
+
+
 admin:
   access_log_path: "/dev/null"
   address:
