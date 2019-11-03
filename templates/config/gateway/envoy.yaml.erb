@@ -11,7 +11,7 @@ static_resources:
           access_log:
           - name: envoy.file_access_log
             config:
-              path: "/var/log/www.access_log"
+              path: "/dev/stdout"
           codec_type: auto
           stat_prefix: ingress_http
           route_config:
@@ -141,7 +141,7 @@ static_resources:
           access_log:
           - name: envoy.file_access_log
             config:
-              path: "/var/log/iii.access_log"
+              path: "/dev/stdout"
           codec_type: auto
           stat_prefix: ingress_http
           route_config:
@@ -258,6 +258,49 @@ static_resources:
                   cluster: barong_mkiii
                   timeout: 1.000s
                   uri: http://barong.mkiii:8001
+          - name: envoy.router
+            config: {}
+
+
+
+
+
+
+
+
+
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8299
+    filter_chains:
+    - filters:
+      - name: envoy.http_connection_manager
+        config:
+          access_log:
+          - name: envoy.file_access_log
+            config:
+              path: "/dev/stdout"
+          codec_type: auto
+          stat_prefix: ingress_http
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: backend
+              domains:
+              - "mkpma.iii.feingkai.com"
+              cors:
+                allow_origin: ["https://mkpma.iii.feingkai.com", "http://mkpma.iii.feingkai.com"]
+                allow_methods: GET, POST, PUT, HEAD, OPTIONS, DELETE
+                allow_headers: Authorization,Content-Type,correlationid
+              routes:
+              - match:
+                  prefix: "/"
+                route:
+                  cluster: mkpma_mkiii
+
+          http_filters:
+          - name: envoy.cors
           - name: envoy.router
             config: {}
   clusters:
@@ -540,6 +583,22 @@ static_resources:
         port_value: 443
 
 
+
+
+  - name: mkpma_mkiii
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: phpmyadmin.mkiii
+        port_value: 443
+
+    
+    
+    
+    
+    
 
 
 
