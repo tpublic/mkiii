@@ -280,7 +280,7 @@ static_resources:
           access_log:
           - name: envoy.file_access_log
             config:
-              path: "/dev/stdout"
+              path: "/var/log/mkpma.mkiii.access_log"
           codec_type: auto
           stat_prefix: ingress_http
           route_config:
@@ -592,7 +592,7 @@ static_resources:
     hosts:
     - socket_address:
         address: phpmyadmin.mkiii
-        port_value: 443
+        port_value: 80
 
     
     
