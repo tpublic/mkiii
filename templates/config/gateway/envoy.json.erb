@@ -988,10 +988,46 @@
                 },
                 "name": "cluster_phpmyadmin_80_mkiii",
                 "type": "STRICT_DNS"
-            }
+            },
         
 
 
+
+
+
+
+
+
+
+
+
+            {
+                "connect_timeout": "3s",
+                "lb_policy": "ROUND_ROBIN",
+                "load_assignment": {
+                    "cluster_name": "cluster_sydcharts_frontend_30873",
+                    "endpoints": [
+                        {
+                            "lb_endpoints": [
+                                {
+                                    "endpoint": {
+                                        "address": {
+                                            "socket_address": {
+                                                "address": "ripplecharts-frontend-ripplecharts-frontend.syd",
+                                                "port_value": 30873,
+                                                "protocol": "TCP"
+                                            }
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "name": "cluster_sydcharts_frontend_30873",
+                "type": "STRICT_DNS"
+            }
+        
 
 
 
@@ -2415,6 +2451,130 @@
 
 
 
+
+            {
+                "address": {
+                    "socket_address": {
+                        "address": "0.0.0.0",
+                        "port_value": 80,
+                        "protocol": "TCP"
+                    }
+                },
+                "filter_chains": [
+                    {
+                        "filters": [
+                            {
+                                "config": {
+                                    "access_log": [
+                                        {
+                                            "config": {
+                                                "format": "ACCESS [%START_TIME%] \"%REQ(:METHOD)% %REQ(X-ENVOY-ORIGINAL-PATH?:PATH)% %PROTOCOL%\" %RESPONSE_CODE% %RESPONSE_FLAGS% %BYTES_RECEIVED% %BYTES_SENT% %DURATION% %RESP(X-ENVOY-UPSTREAM-SERVICE-TIME)% \"%REQ(X-FORWARDED-FOR)%\" \"%REQ(USER-AGENT)%\" \"%REQ(X-REQUEST-ID)%\" \"%REQ(:AUTHORITY)%\" \"%UPSTREAM_HOST%\"\n",
+                                                "path": "/dev/fd/1"
+                                            },
+                                            "name": "envoy.file_access_log"
+                                        }
+                                    ],
+                                    "http_filters": [
+                                        {
+                                            "config": {
+                                                "max_request_bytes": 100000000,
+                                                "max_request_time": "5.000s"
+                                            },
+                                            "name": "envoy.buffer"
+                                        },
+
+                                        {
+                                            "name": "envoy.cors"
+                                        },
+                                        {
+                                            "name": "envoy.router"
+                                        }
+                                    ],
+                                    "route_config": {
+                                        "virtual_hosts": [
+                                            {
+                                                "domains": [
+                                                    "sydcharts.io"
+                                                ],
+                                                "name": "backend",
+                                                "routes": [
+
+                                                    {
+                                                        "match": {
+                                                            "case_sensitive": true,
+                                                            "headers": [
+                                                                {
+                                                                    "exact_match": "sydcharts.io",
+                                                                    "name": ":authority"
+                                                                }
+                                                            ],
+                                                            "prefix": "/"
+                                                        },
+                                                        "per_filter_config": {
+                                                            "envoy.buffer": {
+                                                                "disabled": true
+                                                            }
+                                                        },
+                                                        "route": {
+                                                            "cors": {
+                                                                "allow_methods": "POST, GET, OPTIONS",
+                                                                "allow_origin": [
+                                                                    "*"
+                                                                ],
+                                                                "enabled": true,
+                                                                "max_age": "6400"
+                                                            },
+                                                            "priority": null,
+                                                            "timeout": "3.000s",
+                                                            "weighted_clusters": {
+                                                                "clusters": [
+                                                                    {
+                                                                        "name": "cluster_sydcharts_frontend_30873",
+                                                                        "weight": 100.0
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    },
+
+
+
+
+                                                ]
+                                            }
+                                        ]
+                                    },
+                                    "stat_prefix": "ingress_http",
+                                    "upgrade_configs": [
+                                        {
+                                            "upgrade_type": "websocket"
+                                        }
+                                    ],
+                                    "use_remote_address": true
+                                },
+                                "name": "envoy.http_connection_manager"
+                            }
+                        ],
+                        "use_proxy_proto": false
+                    }
+                ],
+                "name": "cluster_sydcharts_frontend_30873.listener"
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
 
 
         ]
