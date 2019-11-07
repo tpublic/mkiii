@@ -324,7 +324,7 @@ static_resources:
           - name: envoy.file_access_log
             config:
               path: "/dev/stdout"
-        codec_type: auto
+          codec_type: auto
           stat_prefix: ingress_http
           route_config:
             name: local_route
@@ -361,7 +361,7 @@ static_resources:
           - name: envoy.file_access_log
             config:
               path: "/dev/stdout"
-        codec_type: auto
+          codec_type: auto
           stat_prefix: ingress_http
           route_config:
             name: local_route
