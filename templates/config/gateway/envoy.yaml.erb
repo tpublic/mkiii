@@ -349,6 +349,43 @@ static_resources:
 
 
 
+  - address:
+      socket_address:
+        address: 0.0.0.0
+        port_value: 8499
+    filter_chains:
+    - filters:
+      - name: envoy.http_connection_manager
+        config:
+          access_log:
+          - name: envoy.file_access_log
+            config:
+              path: "/dev/stdout"
+        codec_type: auto
+          stat_prefix: ingress_http
+          route_config:
+            name: local_route
+            virtual_hosts:
+            - name: backend
+              domains:
+              - "nexus.bluelight.limited"
+              - "cg.sky.bluelight.limited"
+              cors:
+                allow_origin: ["https://nexus.bluelight.limited", "http://nexus.bluelight.limited" ,"https://cg.sky.bluelight.limited", "http://cg.sky.bluelight.limited" ]
+                allow_methods: GET, POST, PUT, HEAD, OPTIONS, DELETE
+                allow_headers: Authorization,Content-Type,correlationid
+              routes:
+              - match:
+                  prefix: "/"
+                route:
+                  cluster: cluster_services
+
+          http_filters:
+          - name: envoy.cors
+          - name: envoy.router
+            config: {}
+      
+      
 
 
 
@@ -658,7 +695,18 @@ static_resources:
     
         
         
+  - name: cluster_services
+    connect_timeout: 0.25s
+    type: strict_dns
+    lb_policy: round_robin
+    hosts:
+    - socket_address:
+        address: 172.31.44.8
+        port_value: 80
+    
         
+    
+                
     
     
 
