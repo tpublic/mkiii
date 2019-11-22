@@ -151,7 +151,7 @@ static_resources:
               domains:
               - "iii.staging.feingkai.com"
               cors:
-                allow_origin: ["https://iii.staging.feingkai.com", "http://iii.staging.feingkai.com", "iii.staging.feingkai.com", "*.feingkai.com"]
+                allow_origin: ["https://tower.iii.feingkai.com", "http://tower.iii.feingkai.com", "https://iii.staging.feingkai.com", "http://iii.staging.feingkai.com", "iii.staging.feingkai.com", "*.feingkai.com"]
                 allow_methods: GET, POST, PUT, HEAD, OPTIONS, DELETE
                 allow_headers: Authorization,Content-Type,correlationid
               routes:
@@ -368,10 +368,9 @@ static_resources:
             virtual_hosts:
             - name: backend
               domains:
-              - "nexus.bluelight.limited"
               - "cg.sky.bluelight.limited"
               cors:
-                allow_origin: ["https://nexus.bluelight.limited", "http://nexus.bluelight.limited" ,"https://cg.sky.bluelight.limited", "http://cg.sky.bluelight.limited" ]
+                allow_origin: ["https://cg.sky.bluelight.limited", "http://cg.sky.bluelight.limited" ]
                 allow_methods: GET, POST, PUT, HEAD, OPTIONS, DELETE
                 allow_headers: Authorization,Content-Type,correlationid
               routes:
