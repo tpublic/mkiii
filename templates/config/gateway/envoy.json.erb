@@ -2942,6 +2942,36 @@
                                             },
                                             "name": "envoy.buffer"
                                         },
+                                        {
+                                            "config": {
+                                                "http_service": {
+                                                    "allowed_authorization_headers": [
+                                                        "location",
+                                                        "set-cookie",
+                                                        "authorization",
+                                                        "proxy-authenticate",
+                                                        "www-authenticate"
+                                                    ],
+                                                    "allowed_request_headers": [
+                                                        "user-agent",
+                                                        "cookie",
+                                                        "x-forwarded-proto",
+                                                        "authorization",
+                                                        "proxy-authorization",
+                                                        "x-forwarded-host",
+                                                        "x-forwarded-for",
+                                                        "from"
+                                                    ],
+                                                    "path_prefix": "/api/v2/auth",
+                                                    "server_uri": {
+                                                        "cluster": "cluster_extauth_barong_8001_mkiii",
+                                                        "timeout": "5.000s",
+                                                        "uri": "http://barong.mkiii:8001"
+                                                    }
+                                                }
+                                            },
+                                            "name": "envoy.ext_authz"
+                                        },
 
                                         {
                                             "name": "envoy.cors"

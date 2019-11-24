@@ -462,6 +462,31 @@ static_resources:
 
           http_filters:
           - name: envoy.cors
+
+          - name: envoy.ext_authz
+            config:
+              http_service:
+                allowed_authorization_headers:
+                - location
+                - set-cookie
+                - authorization
+                - proxy-authenticate
+                - www-authenticate
+                allowed_request_headers:
+                - user-agent
+                - cookie
+                - x-forwarded-proto
+                - authorization
+                - proxy-authorization
+                - x-forwarded-host
+                - x-forwarded-for
+                - from
+                path_prefix: "/api/v2/auth"
+                server_uri:
+                  cluster: barong_mkiii
+                  timeout: 1.000s
+                  uri: http://barong.mkiii:8001
+
           - name: envoy.router
             config: {}
       
